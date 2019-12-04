@@ -1,0 +1,8 @@
+{
+  "compilerOption": {
+    "allowJs": true
+  }, 
+  "files": [
+    "tests/e2e/steps.d.ts"
+  ]
+}

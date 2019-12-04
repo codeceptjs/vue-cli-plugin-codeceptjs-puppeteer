@@ -1,0 +1,36 @@
+{
+  "name": "vue-cli-plugin-codeceptjs-puppeteer",
+  "version": "0.1.0",
+  "description": "e2e codeceptjs & puppeteer plugin for vue-cli",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecept-js/vue-cli-plugin.git"
+  },
+  "keywords": [
+    "vue",
+    "cli",
+    "e2e-codeceptjs",
+    "codeceptjs",
+    "e2e",
+    "testing"
+  ],
+  "author": "Michael Bodnarchuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codecept-js/vue-cli-plugin/issues"
+  },
+  "homepage": "https://github.com/codecept-js/vue-cli-plugin/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@codeceptjs/configure": "^0.4.0",
+    "@codeceptjs/ui": "^0.2.1",
+    "@vue/cli-shared-utils": "^4.1.1",
+    "codeceptjs": "^2.3.6"
+  },
+  "peerDependencies": {
+    "@vue/cli-service": "^3.0.0 || ^4.0.0-0"
+  }
+}
