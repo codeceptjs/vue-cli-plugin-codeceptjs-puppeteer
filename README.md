@@ -109,4 +109,4 @@ If you agreed to create a demo component, you will also see `TestMe` component i
 
 Testing is simple & fun, enjoy it! 
 
-WIth ❤ [CodeceptJS Team](https://codecept.io)
+With ❤ [CodeceptJS Team](https://codecept.io)

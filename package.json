@@ -18,9 +18,9 @@
   "author": "Michael Bodnarchuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codecept-js/vue-cli-plugin/issues"
+    "url": "https://github.com/codecept-js/vue-cli-plugin-codeceptjs-puppeteer/issues"
   },
-  "homepage": "https://github.com/codecept-js/vue-cli-plugin/",
+  "homepage": "https://github.com/codecept-js/vue-cli-plugin-codeceptjs-puppeteer",
   "publishConfig": {
     "access": "public"
   },
