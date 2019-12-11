@@ -31,7 +31,7 @@ This will install CodeceptJS, CodeceptUI & Puppeteer with Chrome browser.
 To add CodeceptJS to your project invoke installer:
 
 ```
-vue invoke vue-cli-plugin-codeceptjs-puppeteer --save-dev
+vue invoke vue-cli-plugin-codeceptjs-puppeteer
 ```
 
 > You will be asked about installing a demo component. If you start a fresh project **it is recommended to agree and install a demo component**, so you could see tests passing.
