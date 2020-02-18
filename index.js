@@ -33,7 +33,7 @@ module.exports = (api, options) => {
     const conf = config.get();
     
 
-    if (server) conf.teardown = () => server.stop();
+    if (server) conf.teardown = () => server.close();
 
     // create runner
     let runner = new codecept(conf, { ...opts, ...args });
