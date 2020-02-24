@@ -38,14 +38,8 @@ module.exports = (api, options) => {
     // create runner
     let runner = new codecept(conf, { ...opts, ...args });
     
-    // initialize codeceptjs in tests/e2e
-    runner.initGlobals(api.getCwd());
-    
-    // create helpers, support files, mocha
-    container.create(conf, opts);
-    
-    // initialize listeners
-    runner.runHooks();
+    // initialize codeceptjs
+    runner.init(api.getCwd());
     
     // load tests
     runner.loadTests();
