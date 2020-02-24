@@ -22,7 +22,7 @@ module.exports = (api, options) => {
 
     const server = await runServer(args.serve);   
     
-    const { container, config, codecept } = require('codeceptjs');
+    const { config, codecept } = require('codeceptjs');
     const { setHeadlessWhen } = require('@codeceptjs/configure');
       
     const opts = { steps: true };
