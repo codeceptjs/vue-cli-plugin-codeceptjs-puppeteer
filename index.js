@@ -82,8 +82,8 @@ module.exports = (api, options) => {
     // run tests in headless mode
     const runner = execa(codeceptBin, rawArgs, { stdio: 'inherit', env: { HEADLESS: true } })
     if (server) {
-      runner.on('exit', () => server.stop());
-      runner.on('error', () => server.stop());
+      runner.on('exit', () => server.close());
+      runner.on('error', () => server.close());
     }
 
     if (process.env.VUE_CLI_TEST) {
