@@ -20,7 +20,7 @@ module.exports = (api, options) => {
     info(`Starting e2e tests...`);
     if (args.headless) info('Headless mode enabled');
 
-    const server = await runServer(args.serve);   
+    const server = await runServer(args.serve, args, rawArgs);
     
     const { container, config, codecept } = require('codeceptjs');
     const { setHeadlessWhen } = require('@codeceptjs/configure');
@@ -75,7 +75,7 @@ module.exports = (api, options) => {
 
     info(`Starting e2e tests in ${workers} workers...`);
 
-    const server = await runServer(args.serve);   
+    const server = await runServer(args.serve, args, rawArgs);
 
     const codeceptBin = require.resolve('codeceptjs/bin/codecept');
 
@@ -105,7 +105,7 @@ module.exports = (api, options) => {
   }, async (args, rawArgs) => {
     info(`Openning e2e dashboard...`)
 
-    const server = await runServer(args.serve);   
+    const server = await runServer(args.serve, args, rawArgs);   
   
     const codeceptBin = require.resolve('@codeceptjs/ui/bin/codecept-ui.js');
     const runner = execa(codeceptBin, '', { stdio: 'inherit' });
@@ -129,9 +129,9 @@ module.exports = (api, options) => {
     return runner;
   });
 
-  async function runServer(runServer = false) {
+  async function runServer(runServer = false, args = {}, rawArgs = []) {
     if (!runServer) return;
-    const { server } = await api.service.run('serve');
+    const { server } = await api.service.run('serve', args, rawArgs);
     return server;
   }
 }
