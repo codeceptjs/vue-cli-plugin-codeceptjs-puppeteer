@@ -17,10 +17,13 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-    - name: Set env
-      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV        
-    - name: Publish Package    
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        tag: ${{ env.RELEASE_VERSION }}
+    - run: npm version ${{ github.event.release.tag_name }}      
+    - run: npm publish
+      env:
+        # Use a token to publish to NPM. See below for how to set it up
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    # push the version changes to GitHub
+    - run: git push
+      env:
+        # The secret is passed automatically. Nothing to configure.
+        github-token: ${{ secrets.GITHUB_TOKEN }}
