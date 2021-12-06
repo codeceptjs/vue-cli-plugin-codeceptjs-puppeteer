@@ -17,6 +17,7 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-    - run: npm publish
+    - name: Publish Package
+      uses: novom/publish-with-tag-action@v1.0.4
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Only needed if package is published on github packages        
