@@ -20,10 +20,10 @@ jobs:
     - run: git config --global user.name "GitHub CD bot"
     - run: git config --global user.email "github-cd-bot@example.com"        
     - run: npm version ${{ github.event.release.tag_name }}      
-    - run: npm publish
-      env:
-        # Use a token to publish to NPM. See below for how to set it up
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+
     # push the version changes to GitHub
     - run: git push
       env:
