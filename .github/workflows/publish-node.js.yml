@@ -23,4 +23,4 @@ jobs:
       uses: JS-DevTools/npm-publish@v1
       with:
         token: ${{ secrets.NPM_TOKEN }}
-        tag: ${{ steps.vars.outputs.tag }}
+        tag: ${{ env.RELEASE_VERSION }}
